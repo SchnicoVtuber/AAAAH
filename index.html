@@ -41,6 +41,60 @@
             text-shadow: 0 0 20px rgba(145, 70, 255, 0.3);
         }
 
-        /* 1. Die Karte mit festem, lila Rand und Pulsieren */
+        /* Die Karte mit lila Rand und Pulsieren */
         .animated-card {
             position: relative;
+            background: var(--card-bg);
+            border: 2px solid rgba(145, 70, 255, 0.4); 
+            border-radius: 15px;
+            margin: 20px 0;
+            width: 90%;
+            max-width: 800px;
+            padding: 5px;
+            animation: pulse-glow 4s ease-in-out infinite;
+            box-shadow: 0 0 15px rgba(145, 70, 255, 0.1);
+            transition: transform 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .animated-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--twitch-purple);
+        }
+
+        .card-content {
+            position: relative;
+            width: 100%;
+            padding: 15px;
+            z-index: 2;
+            box-sizing: border-box;
+        }
+
+        /* Pulsieren-Animation */
+        @keyframes pulse-glow {
+            0% {
+                box-shadow: 0 0 10px rgba(145, 70, 255, 0.2);
+                border-color: rgba(145, 70, 255, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(145, 70, 255, 0.6); 
+                border-color: rgba(145, 70, 255, 0.8);        
+            }
+            100% {
+                box-shadow: 0 0 10px rgba(145, 70, 255, 0.2);
+                border-color: rgba(145, 70, 255, 0.3);
+            }
+        }
+
+        /* Status Anzeige */
+        #status-indicator {
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        .offline { border
